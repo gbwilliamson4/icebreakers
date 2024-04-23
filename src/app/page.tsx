@@ -8,6 +8,8 @@ import Image from "next/image";
 import { ClimbingBoxLoader } from "react-spinners";
 import { useState } from "react";
 
+export const revalidate = 0;
+
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
