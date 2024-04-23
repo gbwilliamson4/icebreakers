@@ -2,7 +2,8 @@ import axios, { AxiosResponse } from "axios";
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const route: string | undefined = process.env.RANDOM_QUESTION_ROUTE;
+  // const route: string | undefined = process.env.RANDOM_QUESTION_ROUTE;
+  const route: string | undefined = process.env.VERCEL_URL;
 
   if (!route) return new NextResponse("Error", { status: 500 });
 
