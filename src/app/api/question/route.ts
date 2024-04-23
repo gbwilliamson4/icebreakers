@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   // const route: string | undefined = process.env.RANDOM_QUESTION_ROUTE;
-  const route: string | undefined = process.env.VERCEL_URL;
+  const route: string | undefined = process.env.RANDOM_QUESTION_ROUTE;
 
   if (!route) return new NextResponse("Error", { status: 500 });
 
