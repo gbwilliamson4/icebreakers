@@ -1,7 +1,9 @@
 import axios, { AxiosResponse } from "axios";
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 
 export async function GET() {
+  const cookieStore = cookies();
   // const route: string | undefined = process.env.RANDOM_QUESTION_ROUTE;
   const route: string | undefined = process.env.RANDOM_QUESTION_ROUTE;
 

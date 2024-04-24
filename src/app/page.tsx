@@ -8,14 +8,13 @@ import Image from "next/image";
 import { ClimbingBoxLoader } from "react-spinners";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
   const [question, setQuestion] = useState("");
 
-  const router = useRouter();
+  // const router = useRouter();
 
   async function pauseForTwoSeconds(): Promise<void> {
     return new Promise<void>((resolve) => {
@@ -25,33 +24,25 @@ export default function Home() {
     });
   }
 
-  async function getServerSideProps() {
+  async function handlePress() {
+    setLoading(true);
+    // send request to get question
     const route: string = "/api/question";
     const response: AxiosResponse = await axios.get(route);
     const question = response.data;
-    return question;
-  }
-
-  async function handlePress() {
-    setLoading(true);
-    console.log("Button pressed");
-    // send request to get question
-    // const route: string = "/api/question";
-    // const response: AxiosResponse = await axios.get(route);
-    // const question = response.data;
-    const question = await getServerSideProps();
-    console.log("Question:");
-    console.log(question);
-
+    // console.log("question");
+    // console.log(question);
     await pauseForTwoSeconds(); // pause for dramatic effect
-
     // update states
     setCount(count + 1);
     setQuestion(question);
-    console.log("Button press handled");
     setLoading(false);
-    router.refresh();
+    // router.refresh();
   }
+
+  // const count = 5;
+  // const loading = true;
+  // const question = "this is the question?";
 
   return (
     <main className='flex min-h-screen flex-col items-center justify-between p-24 bg-slate-300'>
