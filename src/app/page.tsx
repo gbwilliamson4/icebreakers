@@ -45,8 +45,9 @@ export default function Home() {
   // const question = "this is the question?";
 
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24 bg-slate-300'>
-      <div className='md:container md:mx-auto content-center text-center drop-shadow-md hover:drop-shadow-xl bg-white rounded-md p-5'>
+    <main className='flex min-h-screen flex-col items-center justify-between md:p-24 py-24 px-8 bg-slate-300'>
+      {/* <div className='md:container md:mx-auto content-center text-center drop-shadow-md hover:drop-shadow-xl bg-white rounded-md p-5'> */}
+      <div className='md:container content-center text-center drop-shadow-md hover:drop-shadow-xl bg-white rounded-md p-5'>
         <h1 className='font-bold text-4xl py-5'>
           Random Icebreaker Question Generator v1.0
         </h1>
