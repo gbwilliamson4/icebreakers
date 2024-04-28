@@ -30,23 +30,16 @@ export default function Home() {
     const route: string = "/api/question";
     const response: AxiosResponse = await axios.get(route);
     const question = response.data;
-    // console.log("question");
-    // console.log(question);
+
     await pauseForTwoSeconds(); // pause for dramatic effect
     // update states
     setCount(count + 1);
     setQuestion(question);
     setLoading(false);
-    // router.refresh();
   }
 
-  // const count = 5;
-  // const loading = true;
-  // const question = "this is the question?";
-
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between md:p-24 py-24 px-8 bg-slate-300'>
-      {/* <div className='md:container md:mx-auto content-center text-center drop-shadow-md hover:drop-shadow-xl bg-white rounded-md p-5'> */}
+    <main className='flex h-screen flex-col items-center justify-between md:p-24 py-16 md:py-24 px-8 bg-slate-300'>
       <div className='md:container content-center text-center drop-shadow-md hover:drop-shadow-xl bg-white rounded-md p-5'>
         <h1 className='font-bold text-4xl py-5'>
           Random Icebreaker Question Generator v1.0
